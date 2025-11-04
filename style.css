@@ -6,15 +6,40 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    background-attachment: fixed;
     min-height: 100vh;
     color: #e0e0e0;
     padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(72, 52, 212, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 header {
@@ -66,7 +91,7 @@ main {
 }
 
 .game-card {
-    background: #2a2a2a;
+    background: rgba(42, 42, 42, 0.7);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 40px;
@@ -74,14 +99,15 @@ main {
     text-decoration: none;
     color: #e0e0e0;
     transition: all 0.3s ease;
-    border: 2px solid #3a3a3a;
+    border: 2px solid rgba(120, 119, 198, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .game-card:hover {
     transform: translateY(-10px);
-    background: #333333;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border-color: #4a4a4a;
+    background: rgba(51, 51, 51, 0.8);
+    box-shadow: 0 15px 40px rgba(120, 119, 198, 0.4);
+    border-color: rgba(139, 92, 246, 0.6);
 }
 
 .game-icon {
@@ -107,18 +133,20 @@ main {
 }
 
 .cheat-card {
-    background: #2a2a2a;
+    background: rgba(42, 42, 42, 0.7);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 30px;
-    border: 2px solid #3a3a3a;
+    border: 2px solid rgba(120, 119, 198, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 
 .cheat-card:hover {
-    background: #333333;
+    background: rgba(51, 51, 51, 0.8);
     transform: translateX(10px);
-    border-color: #4a4a4a;
+    border-color: rgba(139, 92, 246, 0.6);
+    box-shadow: 0 12px 40px rgba(120, 119, 198, 0.4);
 }
 
 .cheat-card h2 {
